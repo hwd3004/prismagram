@@ -1,3 +1,35 @@
+# 2.3 Intergrating Prisma in our Server
+
+1. 실제 api에서 어떻게 prisma를 사용할까
+
+   prisma.yml 파일이 있다. 이건 깃헙에 올리면 안된다
+
+   만약 prisma에 문제가 생긴다면, url과 모든 서비스를 변경해야한다
+
+   prisma.yml에는 엔드포인트 주소가 있고,
+
+   generated 폴더 안의 prisma-client 폴더에는 index, prisma-sechma 파일이 있다
+
+   이 파일을 통해 prisma와 정보를 주고 받는다
+
+2. 서비스를 배포할 때마다, prisma cloud에서 무언가를 생성하는데, 그걸 다운받아야한다
+   
+   prisma 서버와 정보를 주고 받으려면, prisma client를 다운받아야한다
+
+   터미널에 prisma1 generate
+
+   sayHello.js 코드 수정
+
+   npm install prisma-client-lib
+
+3. 사람들이 서버에 정보를 요청하면, 서버는 prisma에 요청한다
+
+   이렇게 하는게 사람들이 서버에 직접 요청하는 것보다 안전하다
+
+   프론트 엔드가 서버에 요청하면, 서버가 prisma에 요청
+
+---
+
 # 2.2 Testing Prisma OMG
 
 1. upsert는 update 혹은 insert
