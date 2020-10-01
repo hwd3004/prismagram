@@ -1,3 +1,57 @@
+# 2.0 Introduction to Prisma
+
+1. Prisma는 무엇?
+   
+   프리즈마는 ORM이다. 오브젝트 릴레이셔널 매핑
+
+   프리즈마는 데이터베이스 관련한 어려운 문제들을 해결해준다
+
+   typeorm, django orm, sequelize 같은 다른 orm도 있다
+
+   프리즈마는 어플리케이션에 필요한 모델을 graphql로 정의할 수 있다는 점에서 특별하다
+
+2. 프리즈마가 현재 업데이트 되어 프리즈마2가 되었지만,
+   
+   강의에서는 아직 프리즈마1이다
+
+   https://app.prisma.io/login (Prisma 1 Cloud)
+
+   여기서 계속 프리즈마1으로 할 수 있다
+
+   https://v1.prisma.io/docs/1.34
+
+   프리즈마1 다큐먼트 링크
+
+3. https://app.prisma.io/login (Prisma 1 Cloud)
+   
+   이 주로 가서, npm install -g prisma1 이대로 설치하고,
+
+   밑에 있는 로그인 복붙해서 하면 된다
+
+4. prisma1 init hello-world 한 다음에,
+   
+   지금은 데모로 테스트를 해볼것이기 때문에,
+
+   Demo server + MySQL database 선택
+
+   그다음에 demo-use1 선택
+   
+   name은 prismagram
+
+   stage는 dev
+
+   클라이언트는 자바스크립트 클라이언트
+
+5. hello-world 폴더와, 안에 파일이 생성되었다
+   
+   파일들을 prisma 폴더로 옮기고, hello-world 폴더는 지웠다
+   
+   extensions에서 prisma를 직접 설치하였다
+
+   prisma1 deploy
+
+---
+
 # 1.2 Setting Up the Server like the Pros
 
 1. npm install morgan
