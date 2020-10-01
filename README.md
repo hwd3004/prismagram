@@ -1,3 +1,65 @@
+# 2.2 Testing Prisma OMG
+
+1. upsert는 update 혹은 insert
+
+2. prisma admin에서 유저 하나 생성해보기
+
+mutation {
+  createUser(data:{username:"liufeier", email:"hwd3004@gmail.com"}){id}
+}
+
+3. 검색
+
+{
+  user(where:{username:"liufeier"}){id, username, email}
+}
+
+4. 수정
+
+mutation {
+  updateUser(data:{firstName:"first", lastName:"last"} where:{username:"liufeier"}){username}
+}
+
+5. 팔로잉, 팔로워 포함 검색
+
+{
+  user(where:{username:"liufeier"}){
+    id
+    username
+    email
+    firstName
+    lastName
+    followers {username}
+    following {username}
+  }
+}
+
+6. create, connect, disconnect
+   
+   create는 사용자 생성, connect는 생성된 사용자가 있다면 연결
+
+7. 팔로워 테스트
+
+mutation {
+  updateUser(data:{following:{
+    connect:{
+      username:"liufeier"
+    }
+  }}where:{username:"test"}){
+    username
+    firstName
+    lastName
+    following {
+      username
+    }
+    followers {
+      username
+    }
+  }
+}
+
+---
+
 # 2.1 Datamodel with Prisma
 
 1. prisma로 모델 만들기
