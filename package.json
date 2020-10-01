@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/hwd3004/prismagram#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3"
   },
   "devDependencies": {

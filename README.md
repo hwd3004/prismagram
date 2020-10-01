@@ -1,3 +1,26 @@
+# 1.1 Creating GraphQL Server
+
+1. npm install dotenv
+
+2. 1~6번 주석에 해당하는 코드들 입력 후 서버 재시작하는데 오류 발생
+   
+   (node:17532) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+   import { GraphQLServer } from "graphql-yoga";
+   ^^^^^^
+
+   원인은 node가 import를 인식못함
+   
+   해결책은 .babelrc 파일을 새로 추가하고,
+   npm install @babel/preset-env
+   
+   굳 잘된다
+
+3. 정리
+   
+   graphql-yoga를 이용해서 graphql 서버를 만들었다
+
+
+---
 
 # 1.0 Setting up the project
 
@@ -6,32 +29,40 @@
 2. npm install graphql-yoga
 
 3. pack.json에서
+   
    "main": "index.js", 는 필요없다
 
 4. npm install nodemon -D
+   
    src/server.js에 있는 코드를 실행하는 script를 작성하는데 필요
 
 5. npm install --save-dev @babel/core @babel/node
+   
    https://babeljs.io/docs/en/next/babel-node.html
 
 6. package.json에서
+   
    "scripts": {
         "dev": "nodemon --exec babel-node src/server.js"
     },
 
 7. nodemon.json 파일 추가
+   
    ext라는 걸로 nodemon이 감시해야 할 파일의 확장자들을 지정할 수 있음
    {
         "ext" : "js graphql"
     }
 
 8. npm run dev
+   
    서버 온
 
-9. 정리
+9.  정리
+    
     babel은 멋진 코드를 못생긴 코드로 바꿔주는 도구
     nodemon을 실행할 때마다 babel-node로 src 폴더의 server.js 파일을 실행
     nodemon은 파일을 저장할때마다 실행을 새로 해주는 도구, 서버를 껐다 켰다 할 필요 없음
+
 ---
 
 # prismagram
