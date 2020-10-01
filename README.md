@@ -1,3 +1,9 @@
+# 2.4 Resolvers with Prisma
+
+graphql은 prisma 문법을 이해못한다
+
+---
+
 # 2.3 Intergrating Prisma in our Server
 
 1. 실제 api에서 어떻게 prisma를 사용할까
