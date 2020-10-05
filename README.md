@@ -1,3 +1,67 @@
+# 3.1 Planning the API
+
+앞으로 해야할 것들
+
+사진을 보면 사진에 좋아요루를 누를 수 있고, 좋아요를 취소할 수도 있어야함
+Like / Unlike a photo
+
+사진에 댓글 남길수 있어야함
+아쉽게도 댓글 삭제, 수정은 하지않음
+Comment on a photo
+
+사용자 검색
+Search by user
+
+위치로 검색
+Search by location
+
+사용자 프로필 보기
+See user profile
+
+팔로우, 언팔로우
+Follow / Unfollow user
+
+사진 크게 보기. 모달로 만들지는 않고, 새로운 페이지에 열게 만듬
+
+사진 페이지에서 사용자를 클릭해서, 사용자의 프로필 페이지로 이동
+
+사용자가 프로필 정보를 편집
+Edit my profile
+
+계정 생성
+Create account
+
+로그인
+Log in
+
+사진 업로드
+Upload photos
+
+사진 편집, 삭제
+Edit the photo and Delete
+
+사용자가 처음에 인스타그램에 접속하면 feed를 볼 수 있어야함
+Seed the feed
+
+
+
+이것들을 resolver로 만들거고, prisma를 이용하여 빠르게 만들 수 있음
+Seed the feed는 조금 어려우므로, 제일 마지막에 작업
+
+로그인은, 페이지에 처음 접속하면 이메일을 입력하고,
+서버에서 사용자의 이메일로 비밀값을 전송해줄것임, nodemailer를 사용할것임
+사용자들이 전송받은 비밀값을 페이지에 붙여넣기하면 로그인하게 되고,
+사용자들이 이메일에 접근할 수 있다는 것을 확인하게 됨
+비밀값 유효기간을 지정할 수도 있음
+
+로그인하면 토근을 부여하고, 사용자가 페이지 접속해서 이메일을 입력하면,
+비밀값이 전송되고, 사용자들은 그 비밀값을 복붙해서 접속하는 것
+
+보통 비밀먼호를 쓰지만, 다른 방식으로 해보는 것
+
+
+---
+
 # 2.4 Resolvers with Prisma
 
 graphql은 prisma 문법을 이해못한다
