@@ -1,9 +1,9 @@
 type User {
-  id: ID!
+  id : ID!
   username : String!
   email : String!
   firstName : String
-  lastName: String
+  lastName : String
   bio : String
   followers : [User!]!
   following : [User!]!
@@ -14,7 +14,7 @@ type User {
 }
 
 type Post {
-  id: ID!
+  id : ID!
   location : String
   caption : String!
   user : User!
@@ -24,20 +24,20 @@ type Post {
 }
 
 type Like {
-  id: ID!
+  id : ID!
   user : User!
   post : Post!
 }
 
 type Comment {
-  id: ID!
+  id : ID!
   text : String!
   user : User!
   post : Post!
 }
 
 type File {
-  id: ID!
+  id : ID!
   url : String!
   post : Post!
 }

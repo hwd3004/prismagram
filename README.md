@@ -1,6 +1,57 @@
+# 3.2 Create Account Resolver
+
+Mutation과 Query의 차이
+
+
+createAccount.js 에서
+
+
+export default {
+
+    Mutation : {
+
+        createAccount : async ( _, args ) => {
+           some code...
+        }
+
+    }
+
+}
+
+
+첫번째 인자 root는 필요 없다
+
+
+
+
+
+localhost:4000에서 테스트
+
+
+mutation {
+
+  createAccount(username:"hwd1009", email:"hwangwondong@naver.com", firstName:"hwang", lastName:"wondong"){
+
+    id
+
+  }
+
+}
+
+
+왜인지는 모르겠는데 username : 값입력 이후에 한줄 띄우고, email : 값입력 이후에 한줄 띄우는 식으로 하니까 실행이 안된다
+
+
+
+
+---
+
 # 3.1 Planning the API
 
 앞으로 해야할 것들
+
+로그인
+Log in
 
 사진을 보면 사진에 좋아요루를 누를 수 있고, 좋아요를 취소할 수도 있어야함
 Like / Unlike a photo
@@ -30,9 +81,6 @@ Edit my profile
 
 계정 생성
 Create account
-
-로그인
-Log in
 
 사진 업로드
 Upload photos
