@@ -1,4 +1,7 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+import path from "path";
+
+dotenv.config({path: path.resolve(__dirname, ".env")})
 
 import { GraphQLServer } from "graphql-yoga";
 
@@ -7,6 +10,8 @@ import schema from "./schema.js";
 
 // 7.
 import logger from "morgan";
+
+import { sendSecretMail } from "./utils";
 
 // 5. PORT같은 서버 설정은 env 파일에 추가하고 불러오기
 const PORT = process.env.PORT || 4000;
@@ -17,6 +22,12 @@ const PORT = process.env.PORT || 4000;
 //         hello : String!
 //     }
 // `;
+
+
+// 이거  왜 안돼
+sendSecretMail("hwd3004@gmail.com", "123")
+
+
 
 // 3. resolvers의 쿼리로 hello를 추가, Hi를 응답값으로 설정 
 // const resolvers = {

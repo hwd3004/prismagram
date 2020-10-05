@@ -1,3 +1,25 @@
+# 3.4 sendMail Function with Nodemailer
+
+1. process.env.PORT가 undefind였다
+
+못찾으면 4000을 쓰도록 설정해뒀기때문에 작동하고 있었다
+
+dotenv는 같은 폴더에 있는 .env 파일을 찾는다
+
+2. nodemailer, sendgrid, sendgrid nodemailer
+
+npm install nodemailer
+
+npm install nodemailer-sendgrid-transport
+
+3. export const sendMail = (email) => {
+
+}
+
+인자값 email은 이메일 주소만 말하는게 아니라, 필요한 모든 것이 담긴 것
+
+---
+
 # 3.3 requestSecret Resolver
 
 사용자 생성이 끝났고, 이제 로그인 차례
@@ -23,7 +45,7 @@ mutation ($data: UserUpdateInput!, $where: UserWhereUniqueInput!)
 강의에서 client 코드를 generate 하지 않은게 원인이라고 한다
 
 
-터미널에 prisma1 generate
+터미널에 prisma1 generate, prisma1 deploy
 
 
 여전히 에러가 뜨는데, loginSecret은 필수가 아니어야한다고 한다
