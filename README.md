@@ -1,3 +1,60 @@
+# 3.3 requestSecret Resolver
+
+사용자 생성이 끝났고, 이제 로그인 차례
+
+정확히는 로그인이 아니라, 비밀값 요청,
+
+비밀값 확인 과정 이후 로그인
+
+비밀값 요청 기능은 requestSecret 폴더와 파일들로 만든다
+
+
+
+
+
+
+requestSecret.js 작업 중 에러
+
+
+Error: Variable '$data' expected value of type 'UserUpdateInput!' but got: {"loginSecret":"watch island"}. Reason: 'loginSecret' Field 'loginSecret' is not defined in the input type 'UserUpdateInput'. (line 1, column 11):
+mutation ($data: UserUpdateInput!, $where: UserWhereUniqueInput!)
+
+
+강의에서 client 코드를 generate 하지 않은게 원인이라고 한다
+
+
+터미널에 prisma1 generate
+
+
+여전히 에러가 뜨는데, loginSecret은 필수가 아니어야한다고 한다
+
+
+datamodel.prisma와 modes.graphql에 loginSecret : String! 을 String으로 바꿔주면 되는데,
+
+난 loginSecret을 만들어놓지않았다;;;
+
+
+
+loginSecret : String! @default(value : "")
+
+이렇게 하면 필수로 설정하고, default를 지정할 수 있다
+
+기존 자료들은 이 기본값을 받게 된다, 하지만 강의에선 필수로 하지 않고 한다
+
+
+
+
+vscode에서 드래그나로 범위로 지정한 텍스트에서 alt + shit + i 하면, 각 라인 맨 마지막줄에 편집상태가 된다
+
+각 라인 맨 처음은, 아톰 에디터의 매우 편리한 ctrl + f 기능으로 해결하였다
+
+
+랜덤 글자 생성 사이트
+
+https://www.randomlists.com/random-words
+
+---
+
 # 3.2 Create Account Resolver
 
 Mutation과 Query의 차이

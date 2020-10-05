@@ -21,6 +21,7 @@ type Post {
   files : [File!]!
   likes : [Like!]!
   comments : [Comment!]!
+  loginSecret : String
 }
 
 type Like {
