@@ -1,3 +1,7 @@
+# 3.10 searchUser and searchImage resolver
+
+---
+
 # 3.9 toggleLike and addComment Resolver
 
 ---
