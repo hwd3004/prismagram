@@ -1,3 +1,9 @@
+# 3.6 Passport JWT part Two
+
+npm install jsonwebtoken
+
+---
+
 # 3.5 Passport JWT part One
 
 1. utils.js에서 sendSecretMail은 sendMail을 리턴하고,
