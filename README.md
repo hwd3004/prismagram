@@ -1,3 +1,29 @@
+# 3.13 me Resolver + Prisma's Limitations
+
+1. me.js의 __
+
+더블 언더 스코어는 부모의 arguments를 뜻한다
+
+arguments라고 직접 적어줘도 된다
+
+2. me.graphql에서
+
+type ProfileResponse {
+    user : User!
+    posts : [Post!]!
+}
+
+type Query {
+    me : ProfileResponse!
+}
+
+prisma는 '강한 관계'를 제공하지 않으므로, 내가 원한는 쿼리에 직접 관계를 맺어줘야한다.
+
+웹해킹(공격벡터)를 최소화 시키기 위해서 이렇게 만든 것이다
+
+
+---
+
 # 3.12 editUser seeUser Resolver
 
 1. prisma는 edit에서 빈 매개변수를 보내더라도 이전 것을 보존해준다
