@@ -1,7 +1,4 @@
-import dotenv from "dotenv";
-import path from "path";
-
-dotenv.config({path: path.resolve(__dirname, ".env")})
+import "./env";
 
 import { GraphQLServer } from "graphql-yoga";
 
@@ -11,8 +8,10 @@ import schema from "./schema.js";
 // 7.
 import logger from "morgan";
 
-import passport from "passport";
 import "./passport";
+import { authenticateJwt } from "./passport";
+
+import { prisma } from "../generated/prisma-client";
 
 // 5. PORT같은 서버 설정은 env 파일에 추가하고 불러오기
 const PORT = process.env.PORT || 4000;
@@ -35,12 +34,17 @@ const PORT = process.env.PORT || 4000;
 // const server = new GraphQLServer({typeDefs, resolvers});
 
 // 15.
-const server = new GraphQLServer({ schema });
+const server = new GraphQLServer({
+    schema,
+    context : ( {request} ) => {
+        return ({request})
+    }
+});
 
 // 8. express 서버에서 logger 미들웨어를 사용하도록 할 것임. 사실은 morgan 모듈임
 server.express.use(logger("dev"))
+server.express.use(authenticateJwt)
 
-server.express.use(passport.authenticate("jwt"));
 
 // 4. server.start 함수 추가. 옵션 필요
 // 6. callback 함수 추가. Server running on port ${PORT} 라는 값을 리턴할 것임

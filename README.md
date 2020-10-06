@@ -1,3 +1,16 @@
+# 3.7 Passport JWT part Three
+
+서버에 전달되는 모든 요청은
+
+server.js의 미들웨어 server.express.use(authenticateJwt) 를 통과해서,
+
+passport.js의 export const authenticateJwt 함수로 가서,
+
+passport.authenticate("jwt") 함수를 실행
+
+
+---
+
 # 3.6 Passport JWT part Two
 
 npm install jsonwebtoken
