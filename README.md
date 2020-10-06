@@ -1,3 +1,29 @@
+# 3.5 Passport JWT part One
+
+1. utils.js에서 sendSecretMail은 sendMail을 리턴하고,
+
+sendMail은 Promise 함수를 리턴함.
+
+2. http://www.passportjs.org/packages/passport-jwt/
+
+npm install passport passport-jwt
+
+passport는 인증 관련한 모든 일을 한다
+
+jwt 토큰이나 쿠키에서 정보를 가져와서 사용자 정보에 저장한다
+
+토큰에서 정보를 가져와서 express의 request에 붙여준다
+
+토큰을 가져와서 해독한 후에 사용자 객체를 request에 추가한다
+
+3. const jwtOption 에서
+
+jwtFromRequest : JwtStrategy.ExtractJwt.fromAuthHeaderAsBearerToken()
+
+Authorization 헤더에서 jwt를 찾는 역할을 한다
+
+---
+
 # 3.4 sendMail Function with Nodemailer
 
 1. process.env.PORT가 undefind였다
