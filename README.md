@@ -1,3 +1,15 @@
+# 3.12 editUser seeUser Resolver
+
+1. prisma는 edit에서 빈 매개변수를 보내더라도 이전 것을 보존해준다
+
+2. editUser.js에서 async await를 안쓰는 이유
+
+return이 마지막 statement일때 서버가 자동으로 이 promise가
+
+resolve되서 브라우저에게 결과를 전달하길 기다려준다
+
+---
+
 # 3.11 follow unfollow Resolver
 
 ---

@@ -11,7 +11,7 @@ import logger from "morgan";
 import "./passport";
 import { authenticateJwt } from "./passport";
 
-import { prisma } from "../generated/prisma-client";
+import { isAuthenticated } from "./middlewares";
 
 // 5. PORT같은 서버 설정은 env 파일에 추가하고 불러오기
 const PORT = process.env.PORT || 4000;
@@ -37,7 +37,7 @@ const PORT = process.env.PORT || 4000;
 const server = new GraphQLServer({
     schema,
     context : ( {request} ) => {
-        return ({request})
+        return ({request, isAuthenticated})
     }
 });
 
