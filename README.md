@@ -1,3 +1,7 @@
+# 3.17 itsMe and amIFollowing Fields part 2
+
+---
+
 # 3.16 itsMe and amIFollowing Fields part 1
 
 amIFollowing : (parent, _, {request}) => {}
