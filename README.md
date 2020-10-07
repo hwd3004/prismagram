@@ -1,3 +1,15 @@
+# 3.16 itsMe and amIFollowing Fields part 1
+
+amIFollowing : (parent, _, {request}) => {}
+
+누가 이 앰아이팔로잉의 유저프로필을 요구한다면,
+
+유저프로필을 요청한 사람이, 이 유저프로필을 팔로잉했는가를 확인하려고 한다
+
+유저프로필을 요청한 사람이 누구인지 확인하는 작업은 request로 간단하게 해결한다
+
+---
+
 # 3.15 Computed Fields in Prisma
 
 computed 또는 Custom Fields
@@ -10,7 +22,7 @@ User : {
 
 매개변수 parent는 현재 위치한 fullName의 부모 쿼리 User로부터 데이터를 받아온다
 
-더 정확히는, 부모 Resolver에서 얻은 데이터가 들어간다
+더 정확히는, models.grapghql과 datamodel.prisma에 설정해놓은 부모 Resolver에서 얻은 데이터가 들어간다
 
 ---
 
