@@ -1,3 +1,19 @@
+# 3.15 Computed Fields in Prisma
+
+computed 또는 Custom Fields
+
+User : {
+        fullName : ( parent ) => {
+            return `${parent.firstName} ${parent.lastName}`
+        }
+    }
+
+매개변수 parent는 현재 위치한 fullName의 부모 쿼리 User로부터 데이터를 받아온다
+
+더 정확히는, 부모 Resolver에서 얻은 데이터가 들어간다
+
+---
+
 # 3.14 See Full Posts
 
 ---
