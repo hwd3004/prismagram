@@ -1,3 +1,15 @@
+# 3.21 editPost deletePost Resolver
+
+editPost.js의 코드
+
+1. const post = await prisma.$exists.post({ id, user : { id : user.id }})
+            
+   post가 존재하면, id와 post는 args에서 온 것이고,
+
+2. user는 request에서, isAuthenticated(request) 토큰에서 온 것이다
+
+---
+
 # 3.20 seeFullPost Refactoring
 
 ---
