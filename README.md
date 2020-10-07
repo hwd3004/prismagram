@@ -1,3 +1,40 @@
+# 3.22 deletePost Resolver part Two
+
+1. datamodel.prisma의 코드
+
+type Post {
+
+  id: ID! @id
+
+  location : String
+
+  caption : String!
+
+  user : User!
+
+  files : [File!]!
+
+  likes : [Like!]! @relation(name : "LikeOfPost", onDelete : CASCADE)
+
+  comments : [Comment!]!
+
+}
+
+type Like {
+
+  id: ID! @id
+
+  user : User!
+
+  post : Post @relation(name : "LikeOfPost")
+
+}
+
+Like의 post에는 CASCADE를 주지 않는다
+like를 지우면 post도 같이 지워지지 않게 하려고 하기 때문이다
+
+---
+
 # 3.21 editPost deletePost Resolver
 
 editPost.js의 코드
