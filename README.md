@@ -1,3 +1,7 @@
+# 3.23 seeFeed Resolver
+
+---
+
 # 3.22 deletePost Resolver part Two
 
 1. datamodel.prisma의 코드
