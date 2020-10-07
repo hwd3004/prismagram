@@ -1,3 +1,7 @@
+# 3.14 See Full Posts
+
+---
+
 # 3.13 me Resolver + Prisma's Limitations
 
 1. me.js의 __
@@ -20,7 +24,6 @@ type Query {
 prisma는 '강한 관계'를 제공하지 않으므로, 내가 원한는 쿼리에 직접 관계를 맺어줘야한다.
 
 웹해킹(공격벡터)를 최소화 시키기 위해서 이렇게 만든 것이다
-
 
 ---
 
