@@ -1,3 +1,7 @@
+# 3.27 Introduction to Subscriptions
+
+---
+
 # 3.26 seeRoom Resolver
 
 ---
