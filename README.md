@@ -1,3 +1,11 @@
+# 3.30 Conclusions
+
+---
+
+# 3.29 newMessage Subscription part Two
+
+---
+
 # 3.26 seeRoom Resolver
 
 ---
